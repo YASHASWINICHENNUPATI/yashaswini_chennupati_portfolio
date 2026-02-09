@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Yashaswini Chennupati — Data Scientist | ML Engineer | GenAI & LLM Specialist. Portfolio of production ML, recommender systems, churn modeling, and RAG/LLM applications." />
+  <title>Yashaswini Chennupati | Portfolio</title>
+
+  <style>
+    :root{
+      --bg:#0b0f17;
+      --panel:#101827;
+      --panel2:#0f172a;
+      --text:#e5e7eb;
+      --muted:#a7b0c0;
+      --accent:#7c3aed;
+      --accent2:#22c55e;
+      --border:rgba(255,255,255,.08);
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1080px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background:radial-gradient(1200px 600px at 20% -10%, rgba(124,58,237,.35), transparent 60%),
+                 radial-gradient(1000px 500px at 100% 0%, rgba(34,197,94,.22), transparent 55%),
+                 var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 80px}
+    .nav{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,23,.55);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:.2px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 0 4px rgba(124,58,237,.18);
+    }
+    .links{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .pill{
+      padding:8px 12px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:13px;
+      transition:.15s transform, .15s background, .15s border;
+    }
+    .pill:hover{transform:translateY(-1px); background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.14); color:var(--text)}
+    .hero{
+      padding:44px 0 28px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 860px){
+      .hero{grid-template-columns:1fr; padding-top:28px}
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+    h1{margin:0 0 8px; font-size:42px; line-height:1.1}
+    @media (max-width: 560px){ h1{font-size:34px} }
+    .subtitle{color:var(--muted); font-size:15px; margin:0 0 14px}
+    .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
+    .badge{
+      font-family:var(--mono);
+      font-size:12px;
+      color:#d7dbea;
+      background:rgba(124,58,237,.14);
+      border:1px solid rgba(124,58,237,.25);
+      padding:6px 10px;
+      border-radius:999px;
+    }
+    .badge.green{
+      background:rgba(34,197,94,.14);
+      border-color:rgba(34,197,94,.25);
+    }
+    .cta{
+      display:flex; gap:10px; flex-wrap:wrap; margin-top:16px
+    }
+    .btn{
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:600;
+      font-size:14px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      transition:.15s transform, .15s background, .15s border;
+    }
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.14)}
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(124,58,237,.9), rgba(124,58,237,.55));
+      border-color:rgba(124,58,237,.45);
+    }
+    .btn.primary:hover{background:linear-gradient(135deg, rgba(124,58,237,1), rgba(124,58,237,.65))}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12, 1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+    .col-6{grid-column:span 6}
+    .col-4{grid-column:span 4}
+    .col-12{grid-column:span 12}
+    @media (max-width: 860px){
+      .col-6,.col-4{grid-column:span 12}
+    }
+    h2{margin:0 0 10px; font-size:18px; letter-spacing:.2px}
+    .muted{color:var(--muted)}
+    .kpi{
+      display:flex; flex-direction:column; gap:6px;
+      padding:14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,.18);
+    }
+    .kpi b{font-size:22px}
+    .section{margin-top:22px}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:10px;
+      margin-bottom:10px;
+    }
+    .section-head p{margin:0; color:var(--muted); font-size:14px}
+    .tags{display:flex; flex-wrap:wrap; gap:8px}
+    .tag{
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      padding:6px 10px;
+      border-radius:999px;
+    }
+    .proj{
+      display:flex; flex-direction:column; gap:10px;
+      padding:18px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:rgba(15,23,42,.35);
+      min-height:220px;
+    }
+    .proj h3{margin:0; font-size:16px}
+    .proj p{margin:0; color:var(--muted); font-size:14px}
+    .proj .meta{margin-top:auto; display:flex; flex-wrap:wrap; gap:8px}
+    .proj .meta .mini{
+      font-size:12px;
+      font-family:var(--mono);
+      color:#d7dbea;
+      border:1px solid rgba(255,255,255,.10);
+      padding:6px 9px;
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+    }
+    .footer{
+      margin-top:26px;
+      padding-top:18px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:13px;
+      display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between;
+    }
+    .mono{font-family:var(--mono)}
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Yashaswini Chennupati</span>
+      </div>
+      <nav class="links">
+        <a class="pill" href="#projects">Projects</a>
+        <a class="pill" href="#skills">Skills</a>
+        <a class="pill" href="#experience">Experience</a>
+        <a class="pill" href="#education">Education</a>
+        <a class="pill" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="card">
+        <h1>Data Scientist · ML Engineer · GenAI / LLM</h1>
+        <p class="subtitle">
+          London-based Data Scientist building production ML systems, large-scale data pipelines, and LLM-powered applications
+          (RAG, fine-tuning, and real-time inference APIs).
+        </p>
+
+        <div class="badges">
+          <span class="badge">Databricks</span>
+          <span class="badge">PySpark</span>
+          <span class="badge">MLflow</span>
+          <span class="badge green">LangChain RAG</span>
+          <span class="badge green">GPT APIs</span>
+          <span class="badge">AWS / Azure</span>
+        </div>
+
+        <div class="cta">
+          <a class="btn primary" href="#contact">📩 Contact</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/yashaswini-chennupati/">in LinkedIn</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://github.com/YASHASWINICHENNUPATI">⌁ GitHub</a>
+        </div>
+
+        <div class="grid" style="margin-top:18px">
+          <div class="kpi col-4">
+            <span class="muted">Recommenders</span>
+            <b>+76%</b>
+            <span class="muted">Retention uplift</span>
+          </div>
+          <div class="kpi col-4">
+            <span class="muted">Churn model</span>
+            <b>0.92</b>
+            <span class="muted">AUC @ 1M+ rows</span>
+          </div>
+          <div class="kpi col-4">
+            <span class="muted">LLM support</span>
+            <b>-40%</b>
+            <span class="muted">Resolution time</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h2>Quick Summary</h2>
+        <p class="muted" style="margin-top:0">
+          I design and deploy ML solutions end-to-end: data pipelines → feature engineering → modeling →
+          MLOps & monitoring. Recent work includes recommender systems for 2M+ users, churn prediction,
+          lead scoring, clustering, and LLM customer support automation.
+        </p>
+
+        <div class="section">
+          <h2>Core Focus</h2>
+          <div class="tags">
+            <span class="tag">Production ML</span>
+            <span class="tag">Recommender Systems</span>
+            <span class="tag">Churn & Uplift</span>
+            <span class="tag">Lead Scoring</span>
+            <span class="tag">Segmentation</span>
+            <span class="tag">RAG & Agents</span>
+            <span class="tag">Real-time APIs</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Availability</h2>
+          <p class="muted" style="margin:0">
+            Open to Data Scientist / ML Engineer / AI Engineer roles (UK). Hybrid/Onsite in London.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-head">
+        <div>
+          <h2>Featured Projects</h2>
+          <p>Impact-driven work across recommender systems, predictive modeling, big data, and LLM applications.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="proj col-6">
+          <h3>Hybrid Recommender System (2M+ users)</h3>
+          <p>
+            Built and deployed a scalable hybrid recommender system on Databricks with automated pipelines
+            generating daily personalised outputs. Evaluated performance using A/B testing and behavioural analysis.
+          </p>
+          <div class="meta">
+            <span class="mini">Databricks</span>
+            <span class="mini">PySpark</span>
+            <span class="mini">A/B Testing</span>
+            <span class="mini">Impact: +76% retention</span>
+          </div>
+          <a class="btn" style="margin-top:10px" target="_blank" rel="noopener" href="https://github.com/YASHASWINICHENNUPATI">
+            View GitHub (add repo link)
+          </a>
+        </article>
+
+        <article class="proj col-6">
+          <h3>LLM Customer Support Automation (RAG + GPT)</h3>
+          <p>
+            Productionised an LLM-powered support system using GPT APIs and LangChain RAG.
+            Delivered a REST API for real-time inference with CI/CD orchestration and domain adaptation.
+          </p>
+          <div class="meta">
+            <span class="mini">LangChain</span>
+            <span class="mini">RAG</span>
+            <span class="mini">REST API</span>
+            <span class="mini">Impact: -40% resolution time</span>
+          </div>
+          <a class="btn" style="margin-top:10px" target="_blank" rel="noopener" href="https://www.linkedin.com/in/yashaswini-chennupati/">
+            View on LinkedIn
+          </a>
+        </article>
+
+        <article class="proj col-6">
+          <h3>Churn Prediction Pipeline (GBM + MLflow)</h3>
+          <p>
+            Designed and deployed gradient boosting churn model with 50+ engineered features, automated scoring,
+            and MLflow versioning. Achieved strong model performance at scale.
+          </p>
+          <div class="meta">
+            <span class="mini">Python</span>
+            <span class="mini">MLflow</span>
+            <span class="mini">Feature Eng</span>
+            <span class="mini">97% acc · 85% recall · 0.92 AUC</span>
+          </div>
+          <a class="btn" style="margin-top:10px" target="_blank" rel="noopener" href="https://github.com/YASHASWINICHENNUPATI">
+            View GitHub (add repo link)
+          </a>
+        </article>
+
+        <article class="proj col-6">
+          <h3>Lead Scoring (XGBoost → CRM via APIs)</h3>
+          <p>
+            Led end-to-end development of supervised XGBoost lead scoring model and integrated it into CRM systems
+            using REST APIs for real-time monitoring and actionability.
+          </p>
+          <div class="meta">
+            <span class="mini">XGBoost</span>
+            <span class="mini">SQL</span>
+            <span class="mini">REST APIs</span>
+            <span class="mini">Impact: 93% precision · +7% sales</span>
+          </div>
+          <a class="btn" style="margin-top:10px" target="_blank" rel="noopener" href="https://github.com/YASHASWINICHENNUPATI">
+            View GitHub (add repo link)
+          </a>
+        </article>
+
+        <article class="proj col-6">
+          <h3>Segmentation (GMM) on 128GB Transaction Data</h3>
+          <p>
+            Applied advanced statistical analysis and PySpark on Azure Databricks, built ETL pipelines,
+            and used GMM clustering to create actionable cohorts for targeted personalisation.
+          </p>
+          <div class="meta">
+            <span class="mini">Azure Databricks</span>
+            <span class="mini">PySpark</span>
+            <span class="mini">GMM</span>
+            <span class="mini">Impact: +2.56% sales · +32% retention</span>
+          </div>
+        </article>
+
+        <article class="proj col-6">
+          <h3>NLP Summarisation + Fine-tuning (BERT / LLaMA2 / Gemma)</h3>
+          <p>
+            Developed NLP summariser with high accuracy using NLTK, BERT and LLMs. Experienced with fine-tuning
+            LLaMA2 and Google Gemma; delivered batch summarisation via Python backend APIs.
+          </p>
+          <div class="meta">
+            <span class="mini">NLP</span>
+            <span class="mini">BERT</span>
+            <span class="mini">LLaMA2</span>
+            <span class="mini">Gemma</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="section-head">
+        <div>
+          <h2>Skills</h2>
+          <p>Tools and technologies used across production ML, big data, and GenAI systems.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card col-6">
+          <h2>Machine Learning & GenAI</h2>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">NLP (NLTK, spaCy)</span>
+            <span class="tag">Time Series</span>
+            <span class="tag">Supervised Learning</span>
+            <span class="tag">Unsupervised Learning</span>
+            <span class="tag">LLMs</span>
+            <span class="tag">LangChain RAG</span>
+          </div>
+        </div>
+
+        <div class="card col-6">
+          <h2>Data Engineering & MLOps</h2>
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">PySpark</span>
+            <span class="tag">Databricks</span>
+            <span class="tag">ETL</span>
+            <span class="tag">MLflow</span>
+            <span class="tag">CI/CD</span>
+            <span class="tag">Docker</span>
+            <span class="tag">APIs</span>
+            <span class="tag">Data Quality</span>
+            <span class="tag">Data Modeling</span>
+            <span class="tag">AWS</span>
+            <span class="tag">Azure</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="section-head">
+        <div>
+          <h2>Experience</h2>
+          <p>Selected highlights from recent roles.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card col-12">
+          <h2>Vrudhi Media — Data Scientist <span class="muted">(Jan 2025 – Present, London)</span></h2>
+          <ul class="muted">
+            <li>Deployed hybrid recommender system in Databricks, improving retention by 76% and supporting 2M+ users.</li>
+            <li>Productionised LLM customer support using GPT APIs + LangChain RAG, delivered REST API, reduced resolution time by 40%.</li>
+            <li>Built churn prediction model with MLflow versioning: 97% accuracy, 85% recall, 0.92 AUC on 1M+ records; drove 15% uplift in retention.</li>
+            <li>Delivered KPI analytics and dashboards through stakeholder collaboration (retention, behavioural metrics, value segmentation).</li>
+          </ul>
+        </div>
+
+        <div class="card col-12">
+          <h2>Qbarter Technologies — Data Scientist <span class="muted">(Jan 2023 – Dec 2024, London)</span></h2>
+          <ul class="muted">
+            <li>Built XGBoost lead scoring with 93% precision, integrated into CRM via REST APIs; contributed to 7% sales growth.</li>
+            <li>Processed 128GB transactional data in Azure Databricks; created cohorts via GMM clustering; improved retention by 32%.</li>
+            <li>Optimised data pipeline performance by 71% with improved PySpark transformations and CI/CD pipelines.</li>
+            <li>Developed chat summariser and advanced NLP systems using BERT/LLMs; fine-tuned LLaMA2 and Gemma.</li>
+          </ul>
+        </div>
+
+        <div class="card col-12">
+          <h2>CeduraTech — Data Scientist <span class="muted">(Jun 2021 – Dec 2022, Hyderabad)</span></h2>
+          <ul class="muted">
+            <li>Built LSTM time-series forecasting model; improved operational planning and staffing efficiency.</li>
+            <li>Implemented customer analytics and decision algorithms using RFM-style behavioural metrics to boost engagement.</li>
+            <li>Designed risk modelling algorithms reducing default rates by 15%.</li>
+          </ul>
+        </div>
+
+        <div class="card col-12">
+          <h2>Robert Bosch — Data Science Intern <span class="muted">(Jan 2020 – Mar 2021, Bengaluru)</span></h2>
+          <ul class="muted">
+            <li>Analysed satisfaction data using Python/SQL and delivered insights for product improvements.</li>
+            <li>Automated multi-website price comparisons via web scraping and data mining.</li>
+            <li>Built Tableau dashboards to track KPIs and performance trends.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="section-head">
+        <div>
+          <h2>Education & Certifications</h2>
+          <p>Academic foundation and cloud credentials.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card col-6">
+          <h2>MSc Artificial Intelligence <span class="muted">(University of East London)</span></h2>
+          <ul class="muted">
+            <li>Built supervised models achieving up to 98% accuracy for classification tasks.</li>
+            <li>Developed intrusion detection pipelines with strong performance metrics.</li>
+            <li>Completed GIS-based geospatial analysis projects on London borough datasets.</li>
+          </ul>
+        </div>
+
+        <div class="card col-6">
+          <h2>Certifications</h2>
+          <ul class="muted">
+            <li>AWS Cloud Practitioner</li>
+            <li>AWS Machine Learning – Specialty</li>
+          </ul>
+          <p class="muted mono">Tip: add badge links here once available.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-head">
+        <div>
+          <h2>Contact</h2>
+          <p>Let’s connect for data science / ML engineering opportunities.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card col-12">
+          <p class="muted" style="margin-top:0">
+            <b>Email:</b> <a class="mono" href="mailto:yashaswinichennupati@gmail.com">yashaswinichennupati@gmail.com</a><br/>
+            <b>Phone:</b> <span class="mono">+44 7517 448628</span><br/>
+            <b>LinkedIn:</b> <a class="mono" target="_blank" rel="noopener" href="https://www.linkedin.com/in/yashaswini-chennupati/">linkedin.com/in/yashaswini-chennupati</a><br/>
+            <b>GitHub:</b> <a class="mono" target="_blank" rel="noopener" href="https://github.com/YASHASWINICHENNUPATI">github.com/YASHASWINICHENNUPATI</a>
+          </p>
+
+          <div class="cta">
+            <a class="btn primary" href="mailto:yashaswinichennupati@gmail.com">✉️ Email me</a>
+            <a class="btn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/yashaswini-chennupati/">Connect on LinkedIn</a>
+            <a class="btn" target="_blank" rel="noopener" href="https://github.com/YASHASWINICHENNUPATI">See GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> Yashaswini Chennupati</span>
+      <span class="mono">Built for GitHub Pages</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
